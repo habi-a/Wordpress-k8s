@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: wordpress
+  namespace: kube-system
+spec:
+  entryPoints: http
+  routes:
+    - kind: Rule
+      match: Host(`web.etna.student`)
+      services:
+        - kind: Service
+          name: wordpress
+          namespace: clo4
+          port: 8000
