@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 40,
-  "iteration": 1620575869678,
+  "iteration": 1620576689030,
   "links": [],
   "panels": [
     {
@@ -191,7 +191,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 3,
         "w": 14,
         "x": 0,
         "y": 4
@@ -257,7 +257,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 3,
         "w": 10,
         "x": 14,
         "y": 4
@@ -296,6 +296,552 @@
       ],
       "title": "Persistent Volumes Claims",
       "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 0,
+        "y": 7
+      },
+      "id": 55,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(kube_service_labels)",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Services",
+      "tooltip": {
+        "shared": false
+      },
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "min"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 4,
+        "y": 7
+      },
+      "id": 56,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(kube_deployment_labels)",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Deployments",
+      "tooltip": {
+        "shared": false
+      },
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "min"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 8,
+        "y": 7
+      },
+      "id": 54,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(kube_pod_labels)",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Pods",
+      "tooltip": {
+        "shared": false
+      },
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "min"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 12,
+        "y": 7
+      },
+      "id": 58,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(kube_secret_labels)",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Secrets",
+      "tooltip": {
+        "shared": false
+      },
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "min"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 16,
+        "y": 7
+      },
+      "id": 57,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(kube_replicaset_labels)",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Replicasets",
+      "tooltip": {
+        "shared": false
+      },
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "min"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 20,
+        "y": 7
+      },
+      "id": 59,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "sum(kube_daemonset_labels)",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Daemonsets",
+      "tooltip": {
+        "shared": false
+      },
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "min"
     },
     {
       "cacheTimeout": null,
@@ -340,7 +886,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 14
       },
       "id": 46,
       "interval": null,
@@ -408,7 +954,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 22
       },
       "id": 48,
       "interval": null,
@@ -431,6 +977,82 @@
         }
       ],
       "title": "Deployments",
+      "type": "table"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "${datasource}",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "displayMode": "auto",
+            "filterable": false
+          },
+          "mappings": [
+            {
+              "from": "",
+              "id": 1,
+              "text": "OK",
+              "to": "",
+              "type": 1,
+              "value": "1"
+            },
+            {
+              "from": "",
+              "id": 2,
+              "text": "NO",
+              "to": "",
+              "type": 1,
+              "value": "0"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 30
+      },
+      "id": 49,
+      "interval": null,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "showHeader": true
+      },
+      "pluginVersion": "7.5.4",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "kube_pod_container_status_running",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Pods",
       "type": "table"
     },
     {
@@ -473,12 +1095,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
+        "h": 8,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 39
       },
-      "id": 49,
+      "id": 52,
       "interval": null,
       "links": [],
       "maxDataPoints": 100,
@@ -489,7 +1111,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "kube_service_labels",
+          "expr": "kube_replicaset_labels",
           "format": "table",
           "instant": true,
           "interval": "",
@@ -498,7 +1120,7 @@
           "refId": "A"
         }
       ],
-      "title": "Pods",
+      "title": "Replicasets",
       "type": "table"
     },
     {
@@ -508,7 +1130,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 47
       },
       "id": 20,
       "panels": [],
@@ -547,7 +1169,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 34
+        "y": 48
       },
       "id": 1,
       "interval": "1m",
@@ -690,7 +1312,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 34
+        "y": 48
       },
       "id": 2,
       "interval": null,
@@ -833,7 +1455,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 34
+        "y": 48
       },
       "id": 3,
       "interval": null,
@@ -976,7 +1598,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 34
+        "y": 48
       },
       "id": 4,
       "interval": null,
@@ -1119,7 +1741,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 34
+        "y": 48
       },
       "id": 5,
       "interval": null,
@@ -1262,7 +1884,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 34
+        "y": 48
       },
       "id": 6,
       "interval": null,
@@ -1381,7 +2003,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 51
       },
       "id": 21,
       "panels": [],
@@ -1405,7 +2027,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 52
       },
       "hiddenSeries": false,
       "id": 7,
@@ -1504,7 +2126,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 48
+        "y": 62
       },
       "hiddenSeries": false,
       "id": 33,
@@ -1603,7 +2225,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 48
+        "y": 62
       },
       "hiddenSeries": false,
       "id": 35,
@@ -1695,7 +2317,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 70
       },
       "id": 22,
       "panels": [],
@@ -1720,7 +2342,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 57
+        "y": 71
       },
       "id": 8,
       "legend": {
@@ -2008,7 +2630,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 64
+        "y": 78
       },
       "id": 23,
       "panels": [],
@@ -2032,7 +2654,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 65
+        "y": 79
       },
       "hiddenSeries": false,
       "id": 9,
@@ -2133,7 +2755,7 @@
         "h": 8,
         "w": 13,
         "x": 0,
-        "y": 72
+        "y": 86
       },
       "hiddenSeries": false,
       "id": 39,
@@ -2234,7 +2856,7 @@
         "h": 8,
         "w": 11,
         "x": 13,
-        "y": 72
+        "y": 86
       },
       "hiddenSeries": false,
       "id": 37,
@@ -2328,7 +2950,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 80
+        "y": 94
       },
       "id": 24,
       "panels": [],
@@ -2353,7 +2975,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 81
+        "y": 95
       },
       "id": 10,
       "legend": {
@@ -2641,7 +3263,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 88
+        "y": 102
       },
       "id": 25,
       "panels": [],
@@ -2666,7 +3288,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 89
+        "y": 103
       },
       "id": 11,
       "interval": "1m",
@@ -2930,7 +3552,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 96
+        "y": 110
       },
       "id": 26,
       "panels": [],
@@ -2954,7 +3576,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 97
+        "y": 111
       },
       "hiddenSeries": false,
       "id": 12,
@@ -3055,7 +3677,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 97
+        "y": 111
       },
       "hiddenSeries": false,
       "id": 13,
@@ -3147,7 +3769,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 104
+        "y": 118
       },
       "id": 27,
       "panels": [],
@@ -3171,7 +3793,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 105
+        "y": 119
       },
       "hiddenSeries": false,
       "id": 14,
@@ -3272,7 +3894,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 105
+        "y": 119
       },
       "hiddenSeries": false,
       "id": 15,
@@ -3364,7 +3986,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 112
+        "y": 126
       },
       "id": 28,
       "panels": [],
@@ -3388,7 +4010,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 113
+        "y": 127
       },
       "hiddenSeries": false,
       "id": 16,
@@ -3489,7 +4111,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 113
+        "y": 127
       },
       "hiddenSeries": false,
       "id": 17,
@@ -3581,7 +4203,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 120
+        "y": 134
       },
       "id": 29,
       "panels": [],
@@ -3605,7 +4227,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 121
+        "y": 135
       },
       "hiddenSeries": false,
       "id": 18,
@@ -3702,7 +4324,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 121
+        "y": 135
       },
       "hiddenSeries": false,
       "id": 19,
@@ -3938,5 +4560,5 @@
   "timezone": "UTC",
   "title": "Kubernetes & VM Metrics",
   "uid": "exZVKDCMz",
-  "version": 13
+  "version": 20
 }
