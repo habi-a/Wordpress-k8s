@@ -1,17 +1,17 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: wordpress
+  name: grafana
   namespace: traefik
 spec:
-  entryPoints: 
+  entryPoints:
     - websecure
   routes:
-    - kind: Rule
-      match: Host(`web.etna.student`)
+    - match: Host(`grafana.etna.student`)
+      kind: Rule
       services:
-        - name: wordpress
-          namespace: clo4
-          port: 8000
+        - name: grafana
+          namespace: monitoring
+          port: 3000
   tls:
     certResolver: letsencrypt-staging

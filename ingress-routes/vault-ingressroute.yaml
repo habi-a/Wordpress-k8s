@@ -1,17 +1,17 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: wordpress
+  name: vault
   namespace: traefik
 spec:
-  entryPoints: 
+  entryPoints:
     - websecure
   routes:
-    - kind: Rule
-      match: Host(`web.etna.student`)
+    - match: Host(`vault.etna.student`)
+      kind: Rule
       services:
-        - name: wordpress
+        - name: vault
           namespace: clo4
-          port: 8000
+          port: 8200
   tls:
     certResolver: letsencrypt-staging

@@ -1,0 +1,24 @@
+additionalArguments:
+  - "--api.insecure=true"
+  - "--accesslog=true"
+  - "--log.level=DEBUG"
+  - "--providers.kubernetescrd=true"
+  - "--providers.file.directory=/custom/"
+  - "--providers.file.watch=true"
+  - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+  - "--certificatesresolvers.letsencrypt.acme.email=habi_a@etna-alternance.net"
+  - "--certificatesresolvers.letsencrypt.acme.storage=/certs/letsencrypt.json"
+  - "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+  - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+  - "--certificatesresolvers.letsencrypt-staging.acme.httpchallenge=true"
+  - "--certificatesresolvers.letsencrypt-staging.acme.email=habi_a@etna-alternance.net"
+  - "--certificatesresolvers.letsencrypt-staging.acme.storage=/certs/letsencrypt-staging.json"
+  - "--certificatesresolvers.letsencrypt-staging.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+  - "--certificatesresolvers.letsencrypt-staging.acme.httpchallenge.entrypoint=web"
+  - "--metrics.prometheus.addentrypointslabels=true"
+  - "--metrics.prometheus.addserviceslabels=true"
+  - "--metrics.prometheus.entrypoint=traefik"
+persistence:
+  enabled: true
+  path: /certs
+  size: 128Mi

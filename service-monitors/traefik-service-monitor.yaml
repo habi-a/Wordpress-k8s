@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app.kubernetes.io/name: traefik
+  namespace: monitoring
+  name: traefik-service-monitor
+spec:
+  endpoints:
+    - interval: 15s
+      port: "web"
+  namespaceSelector:
+    matchNames:
+      - traefik
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: traefik

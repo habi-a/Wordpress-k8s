@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: wordpress
+  name: hugo
+  namespace: clo4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: documentation
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: documentation
+    spec:
+      containers:
+        - image: klakegg/hugo:0.82.0
+          command: ["hugo", "server", "-b", "https://hugo.etna.student", "--appendPort=false"]
+          name: hugo
+          ports:
+            - containerPort: 1313
+          volumeMounts:
+            - mountPath: "/src"
+              name: hugo-storage
+      volumes:
+        - name: hugo-storage
+          persistentVolumeClaim:
+            claimName: hugo-claim

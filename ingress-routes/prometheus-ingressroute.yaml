@@ -1,17 +1,17 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: wordpress
+  name: prometheus
   namespace: traefik
 spec:
-  entryPoints: 
+  entryPoints:
     - websecure
   routes:
-    - kind: Rule
-      match: Host(`web.etna.student`)
+    - match: Host(`prometheus.etna.student`)
+      kind: Rule
       services:
-        - name: wordpress
-          namespace: clo4
-          port: 8000
+        - name: prometheus-k8s
+          namespace: monitoring
+          port: 9090
   tls:
     certResolver: letsencrypt-staging
