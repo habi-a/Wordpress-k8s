@@ -11,7 +11,7 @@ spec:
       kind: Rule
       services:
         - name: vault
-          namespace: clo4
+          namespace: vault
           port: 8200
   tls:
     certResolver: letsencrypt-staging
