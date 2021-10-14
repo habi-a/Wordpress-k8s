@@ -1,6 +1,6 @@
 # Wordpress-k8s
 
-Wordpress-k8s is a project to deploy Wordpress application on Kubernets featuring MySQL and Monitoring solutions, such as Loki Promtail Prometheus and Grafana
+Wordpress-k8s is a project to deploy Wordpress application on Kubernetes featuring MySQL and Monitoring solutions, such as Loki Promtail Prometheus and Grafana
 
 To use this project you will need to have Kubernetes installed. If you don't already have installed it, please follow the official [installation guide](https://kubernetes.io/docs/setup/)
 
